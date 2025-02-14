@@ -1,9 +1,9 @@
-use appload_client::{AppLoadBackend, BackendReplier, Message, MSG_SYSTEM_NEW_COORDINATOR, start};
+use appload_client::{AppLoad, AppLoadBackend, BackendReplier, Message, MSG_SYSTEM_NEW_COORDINATOR};
 use async_trait::async_trait;
 
 #[tokio::main]
 async fn main() {
-    start(&mut MyBackend).await.unwrap();
+    AppLoad::new(&mut MyBackend).unwrap();
 }
 
 struct MyBackend;
